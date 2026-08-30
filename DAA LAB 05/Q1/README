@@ -1,0 +1,19 @@
+Algorithm -
+1.Start
+2.Input N and the N elements.
+3.If N is odd, set mid = N/2.
+4.If N is even, set mid1 = N/2 - 1 and mid2 = N/2.
+5.For each element, count the number of elements smaller than it.
+6.For odd N, the element having count = mid is the median.
+7.For even N, find the elements having count = mid1 and count = mid2.
+8.Calculate their average as the median.
+9.Display the median.
+10.Stop.
+
+
+Complexity --->
+
+->Time Complexity: O(N²)
+->Outer loop runs N times.
+->Inner loop runs N times.
+->Therefore, N × N = O(N²).
