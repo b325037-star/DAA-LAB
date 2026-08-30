@@ -1,0 +1,25 @@
+Algorithm:
+
+1. Start.
+2. Input N and N elements.
+3. Input the value of K.
+4. For each element, count the number of elements smaller than it.
+5. If the count is equal to K - 1, then that element is the K-th smallest element.
+6. Display the K-th smallest element.
+7. Stop.
+
+Complexity Analysis:
+
+Time Complexity:
+The program uses two nested loops.
+The outer loop runs N times, and for every element, the inner loop also runs N times to count the number of smaller elements.
+Therefore,
+
+Time Complexity = N × N
+                 = O(N²)
+
+Best Case = O(N²)
+Average Case = O(N²)
+Worst Case = O(N²)
+
+The same number of comparisons are performed regardless of the arrangement of elements.
