@@ -1,0 +1,29 @@
+Algorithm:
+
+1. Start.
+2. Input the number of elements N.
+3. Generate N random numbers.
+4. Display the generated random numbers.
+5. Build a Max Heap from the elements.
+6. Set i = N - 1.
+7. Swap the first element (maximum) with a[i].
+8. Reduce the heap size by 1.
+9. Apply Heapify to maintain the Max Heap.
+10. Repeat steps 7–9 until i = 1.
+11. Display the sorted elements.
+12. Stop.
+
+
+Complexity Analysis:
+
+Time Complexity:
+Building the Max Heap takes O(N) time.
+Heapify operation takes O(log N) time.
+The heapify operation is performed N times during sorting.
+Therefore,
+
+Time Complexity = O(N) + O(N log N)
+                = O(N log N)
+Best Case    = O(N log N)
+Average Case = O(N log N)
+Worst Case   = O(N log N)
