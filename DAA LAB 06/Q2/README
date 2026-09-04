@@ -1,0 +1,77 @@
+##Logic :
+
+Weight <= Capacity?
+       ↓
+      YES
+       ↓
+Take OR Don't Take
+       ↓
+     MAX
+
+Weight > Capacity?
+       ↓
+      NO
+       ↓
+Don't Take
+
+
+
+**ALGORITHM: 0/1 KNAPSACK USING DYNAMIC PROGRAMMING**
+
+
+1. Start.
+
+2. Read the number of items n.
+
+3. Read the weight and profit of each item.
+
+4. Read the capacity W of the knapsack.
+
+5. Create a DP table K[n+1][W+1].
+
+6. Initialize K[i][0] = 0 for all i
+   and K[0][w] = 0 for all w.
+
+7. For i = 1 to n, repeat:
+
+      For w = 1 to W, repeat:
+
+          If weight[i] <= w, then
+
+              K[i][w] =
+              max(K[i-1][w],
+                  profit[i] + K[i-1][w-weight[i]])
+
+          Else
+
+              K[i][w] = K[i-1][w]
+
+8. The maximum profit is K[n][W].
+
+9. Display K[n][W].
+
+10. Stop.
+
+
+
+
+
+##TIME COMPLEXITY AND SPACE COMPLEXITY
+
+Outer loop → n times
+Inner loop → W times
+
+Therefore,
+
+Time = n × W
+     = O(nW)
+
+DP table K[n+1][W+1] stores n × W values.
+
+Therefore,
+
+Space = O(nW)
+
+
+Time Complexity  = O(nW)
+Space Complexity = O(nW)
