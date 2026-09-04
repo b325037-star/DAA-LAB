@@ -1,0 +1,64 @@
+##ALGORITHM: MATRIX CHAIN MULTIPLICATION
+
+1. Start.
+
+2. Read N.
+
+3. Read the array arr[] containing the dimensions
+   of the matrices.
+
+4. Create a DP table dp[N][N].
+
+5. Set dp[i][i] = 0 for all i because a single
+   matrix requires no multiplication.
+
+6. Consider chain lengths from 2 to N-1.
+
+7. For every starting position i:
+
+      Calculate j = i + length - 1.
+
+8. Set dp[i][j] = infinity.
+
+9. Try every possible splitting position k
+   from i to j-1.
+
+10. Calculate:
+
+      cost = dp[i][k] + dp[k+1][j]
+             + arr[i-1] * arr[k] * arr[j]
+
+11. If cost is smaller than dp[i][j],
+    update dp[i][j].
+
+12. After filling the table, dp[1][N-1]
+    contains the minimum number of scalar
+    multiplications.
+
+13. Display the result.
+
+14. Stop.
+
+
+
+**Time Complexity Analysis:**
+
+There are three nested loops in the algorithm.
+The chain length loop takes O(N) time,
+the starting position loop takes O(N) time,
+and the splitting position loop takes O(N) time.
+
+Therefore,
+
+Time Complexity = O(N) × O(N) × O(N)
+                = O(N^3)
+
+
+Space Complexity Analysis:
+
+A two-dimensional DP table of size N × N is used.
+
+Therefore,
+
+Space Complexity = O(N × N)
+                 = O(N^2)
