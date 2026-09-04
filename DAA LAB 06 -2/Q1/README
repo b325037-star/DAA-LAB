@@ -1,0 +1,277 @@
+##TIME COMPLEXITY ANALYSIS
+
+(i) Finding Maximum Element
+
+for (int i = 1; i < n; i++)
+{
+    if (a[i] > max)
+        max = a[i];
+}
+
+The loop runs from 1 to n-1.
+
+Number of iterations = n - 1
+
+Comparison is performed in every iteration.
+
+T(n) = n - 1
+     = O(n)
+
+Therefore,
+
+Worst-case Time Complexity = O(n)
+Space Complexity = O(1)
+
+
+
+
+(ii) Finding First and Second Largest Elements
+
+for (int i = 1; i < n; i++)
+{
+    if (a[i] > first)
+        ...
+    else if (a[i] > second)
+        ...
+}
+
+The loop runs from 1 to n-1.
+
+Number of iterations = n - 1
+
+Each iteration performs a constant number of comparisons.
+
+T(n) = n - 1
+     = O(n)
+
+Therefore,
+
+Worst-case Time Complexity = O(n)
+Space Complexity = O(1)
+
+
+
+
+(iii) Finding Mean
+
+for (int i = 0; i < n; i++)
+{
+    sum += a[i];
+}
+
+The loop runs n times.
+
+Number of iterations = n
+
+T(n) = n
+     = O(n)
+
+Therefore,
+
+Worst-case Time Complexity = O(n)
+Space Complexity = O(1)
+
+
+
+
+
+
+(iv) Finding Median
+
+For finding the median of an unsorted array,
+the array is first sorted using Bubble Sort.
+
+Bubble Sort:
+
+for (int i = 0; i < n-1; i++)
+{
+    for (int j = 0; j < n-i-1; j++)
+    {
+        ...
+    }
+}
+
+Outer loop runs = n - 1 times.
+
+Inner loop runs approximately:
+(n-1), (n-2), ..., 1 times.
+
+Total comparisons:
+
+T(n) = (n-1) + (n-2) + ... + 1
+
+     = n(n-1)/2
+
+     = (n^2 - n)/2
+
+Ignoring constants and lower-order terms:
+
+T(n) = O(n^2)
+
+Finding the median after sorting takes O(1).
+
+Therefore,
+
+Worst-case Time Complexity = O(n^2)
+Space Complexity = O(1)
+
+
+
+
+
+(v) Finding Standard Deviation
+
+The function performs two main operations.
+
+First, finding the mean:
+
+for (int i = 0; i < n; i++)
+    sum += a[i];
+
+Time = O(n)
+
+Second, calculating variance:
+
+for (int i = 0; i < n; i++)
+{
+    sum += (a[i] - mean) * (a[i] - mean);
+}
+
+Time = O(n)
+
+Total:
+
+T(n) = O(n) + O(n)
+     = O(2n)
+     = O(n)
+
+Therefore,
+
+Worst-case Time Complexity = O(n)
+Space Complexity = O(1)
+
+
+
+
+
+
+
+(vi) Finding Mode
+
+The function uses two nested loops.
+
+Outer loop:
+
+for (int i = 0; i < n; i++)
+
+Runs n times.
+
+Inner loop:
+
+for (int j = 0; j < n; j++)
+
+Runs n times for each outer iteration.
+
+Therefore:
+
+T(n) = n × n
+     = n^2
+
+Hence,
+
+Worst-case Time Complexity = O(n^2)
+Space Complexity = O(1)
+
+
+
+
+
+(vii) Removing All Duplicates
+
+The function uses an outer loop and an inner loop.
+
+Outer loop runs n times.
+
+The inner loop checks previously stored elements.
+
+In the worst case:
+
+Comparisons = 0 + 1 + 2 + ... + (n-1)
+
+              = n(n-1)/2
+
+              = (n^2 - n)/2
+
+Ignoring constants and lower-order terms:
+
+T(n) = O(n^2)
+
+Therefore,
+
+Worst-case Time Complexity = O(n^2)
+Space Complexity = O(n)
+
+
+(viii) Reversing the Array
+
+for (int i = 0; i < n/2; i++)
+{
+    swap elements
+}
+
+The loop runs n/2 times.
+
+T(n) = n/2
+
+Ignoring the constant 1/2:
+
+T(n) = O(n)
+
+Therefore,
+
+Worst-case Time Complexity = O(n)
+Space Complexity = O(1)
+
+
+(ix) Partitioning the Array
+
+The partition function uses two pointers:
+
+i → moves from left to right
+j → moves from right to left
+
+Both pointers move through the array.
+
+The total number of movements is at most proportional to n.
+
+T(n) = O(n)
+
+Therefore,
+
+Worst-case Time Complexity = O(n)
+Space Complexity = O(1)
+
+
+ SUMMARY OF TIME AND SPACE COMPLEXITY
+
+---------------------------------------------------------
+Operation                         Time        Space
+---------------------------------------------------------
+(i) Maximum Element               O(n)        O(1)
+
+(ii) First & Second Largest       O(n)        O(1)
+
+(iii) Mean                        O(n)        O(1)
+
+(iv) Median (Bubble Sort)         O(n^2)      O(1)
+
+(v) Standard Deviation            O(n)        O(1)
+
+(vi) Mode                         O(n^2)      O(1)
+
+(vii) Remove Duplicates           O(n^2)      O(n)
+
+(viii) Reverse Array              O(n)        O(1)
+
+(ix) Partition Array              O(n)        O(1)
+---------------------------------------------------------
