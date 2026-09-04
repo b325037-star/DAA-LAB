@@ -1,0 +1,183 @@
+
+
+OPERATIONS
+
+(i) Matrix Addition
+(ii) Matrix Multiplication
+(iii) Check Zero Matrix
+(iv) Check Symmetric Matrix
+(v) Determinant
+(vi) Transpose In-place
+(vii) Eigenvalue and Eigenvector
+
+
+
+## TIME COMPLEXITY ANALYSIS
+
+(i) Matrix Addition
+
+Two nested loops are used.
+
+Number of iterations:
+
+n × n = n²
+
+Therefore:
+
+Time Complexity = O(n²)
+Space Complexity = O(n²)
+
+
+
+
+(ii) Matrix Multiplication
+
+Three nested loops are used.
+
+Number of iterations:
+
+n × n × n = n³
+
+Therefore:
+
+Time Complexity = O(n³)
+Space Complexity = O(n²)
+
+
+
+
+
+(iii) Check Zero Matrix
+
+Every element of the matrix is checked.
+
+Number of elements:
+
+n × n = n²
+
+Worst case: all elements are checked.
+
+Therefore:
+
+Time Complexity = O(n²)
+Space Complexity = O(1)
+
+
+
+
+(iv) Check Symmetric Matrix
+
+Each element is compared with its corresponding
+transpose element.
+
+Number of comparisons:
+
+n × n = n²
+
+Therefore:
+
+Time Complexity = O(n²)
+Space Complexity = O(1)
+
+
+
+
+
+(v) Determinant
+    (Recursive Cofactor Method)
+
+For an n × n matrix, the first row is used for
+cofactor expansion.
+
+There are n recursive calls.
+
+Recurrence:
+
+T(n) = nT(n-1) + O(n²)
+
+Expanding gives:
+
+T(n) = O(n!)
+
+Therefore:
+
+Time Complexity = O(n!)
+Space Complexity = O(n²)
+
+
+
+
+
+
+(vi) Transpose In-Place
+
+Only the upper triangular part of the matrix
+is traversed.
+
+Number of iterations:
+
+(n-1) + (n-2) + ... + 1
+
+= n(n-1)/2
+
+= O(n²)
+
+Therefore:
+
+Time Complexity = O(n²)
+Space Complexity = O(1)
+
+
+
+
+
+
+(vii) Eigenvalue and Eigenvector
+      (Power Iteration Method)
+
+In every iteration, matrix A is multiplied
+by vector X.
+
+Matrix-vector multiplication requires:
+
+n × n = n² operations
+
+If k iterations are performed:
+
+T(n) = O(k × n²)
+
+Therefore:
+
+Time Complexity = O(k n²)
+
+For fixed number of iterations:
+
+Time Complexity = O(n²)
+
+Space Complexity = O(n)
+
+
+
+FINAL ANSWER
+
+---------------------------------------------------------
+Operation                         Time        Space
+---------------------------------------------------------
+(i) Matrix Addition               O(n²)       O(n²)
+
+(ii) Matrix Multiplication        O(n³)       O(n²)
+
+(iii) Zero Matrix                 O(n²)       O(1)
+
+(iv) Symmetric Matrix             O(n²)       O(1)
+
+(v) Determinant (Recursive)       O(n!)       O(n²)
+
+(vi) Transpose In-Place           O(n²)       O(1)
+
+(vii) Eigenvalue & Eigenvector    O(kn²)      O(n)
+
+For fixed k:
+
+(vii) Eigenvalue & Eigenvector    O(n²)
+---------------------------------------------------------
