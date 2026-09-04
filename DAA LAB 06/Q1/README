@@ -1,0 +1,47 @@
+##ALGORITHM: LONGEST COMMON SUBSEQUENCE
+
+1. Start.
+
+2. Read two strings X and Y.
+
+3. Find the lengths of X and Y as m and n.
+
+4. Create a DP table dp[m+1][n+1].
+
+5. Initialize the first row and first column with 0.
+
+6. For i = 1 to m, repeat:
+
+      For j = 1 to n, repeat:
+
+          If X[i-1] == Y[j-1], then
+
+              dp[i][j] = dp[i-1][j-1] + 1
+
+          Else
+
+              dp[i][j] = max(dp[i-1][j],
+                             dp[i][j-1])
+
+7. The value dp[m][n] gives the length of
+   the Longest Common Subsequence.
+
+8. Display the length of LCS.
+
+9. Stop.
+
+
+
+
+**Time Complexity Analysis:**
+
+The outer loop runs m times and the inner loop
+runs n times for each iteration of the outer loop.
+
+Therefore, total operations = m × n.
+
+Each operation inside the loop takes O(1) time.
+
+Hence,
+
+Time Complexity = O(m × n)
