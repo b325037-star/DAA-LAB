@@ -1,0 +1,22 @@
+## Algorithm: Sort Permutation Using Reversal
+
+1. Start.
+
+2. Input the permutation of n elements.
+
+3. Set cost = 0.
+
+4. For i = 0 to n-1:
+      a. Find the position of element (i + 1).
+      b. If it is not already at position i:
+            - Reverse the elements from position i
+              to its current position.
+            - Add the length of reversal to cost.
+
+5. Repeat until all elements are in their correct positions.
+
+6. Display the sorted permutation.
+
+7. Display the total reversal cost.
+
+8. Stop.
