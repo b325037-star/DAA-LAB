@@ -1,0 +1,54 @@
+ALGORITHM: BEST TIME TO BE ALIVE
+
+Step 1: Start.
+
+Step 2: Read the number of scientists n.
+
+Step 3: Read the birth year and death year of each scientist.
+
+Step 4: Store every birth event as (+1)
+        and every death event as (-1).
+
+Step 5: Sort all events by year.
+        If birth and death occur in the same year,
+        process death before birth.
+
+Step 6: Set count = 0 and max = 0.
+
+Step 7: Process each event one by one:
+
+        If it is a death:
+            count = count - 1
+
+        If it is a birth:
+            count = count + 1
+
+        If count > max:
+            max = count
+            bestYear = current year
+
+Step 8: Display bestYear and max.
+
+Step 9: Stop.
+
+
+
+
+
+
+TIME COMPLEXITY:
+
+Sorting birth[] array:
+    O(n²)
+Sorting death[] array:
+    O(n²)
+Processing the arrays:
+    O(n)
+
+Therefore:
+Total Time Complexity
+= O(n²) + O(n²) + O(n)
+= O(n²)
+
+Space Complexity:
+= O(n)
