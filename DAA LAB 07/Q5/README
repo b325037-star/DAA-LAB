@@ -1,0 +1,29 @@
+ALGORITHM HIT_TARGET(n)
+
+1. Number the hiding spots from 1 to n.
+
+2. If n is even:
+
+       Shoot at:
+       2, 3, 4, ..., n-1
+
+       Then shoot at:
+       n-1, n-2, ..., 3, 2
+
+3. If n is odd:
+
+       Shoot at:
+       2, 3, 4, ..., n-1
+
+       Then again shoot at:
+       2, 3, 4, ..., n-1
+
+4. Since the target moves to an adjacent spot after
+   every shot, its parity changes after every move.
+
+5. The shooting sequence changes the parity relationship
+   between the shooter and the target.
+
+6. Therefore, the target cannot avoid every shot.
+
+7. Hence, the target is guaranteed to be hit.
