@@ -1,0 +1,34 @@
+**ALGORITHM**
+
+Step 1: Start.
+
+Step 2: Read the number of matrices n.
+
+Step 3: Read the dimensions p[0], p[1], ..., p[n].
+
+Step 4: Set:
+        m[i][i] = 0
+        for all i = 1 to n.
+
+Step 5: For chain length l = 2 to n:
+
+        For i = 1 to n-l+1:
+
+            j = i + l - 1.
+
+            Set the cost for k = i.
+
+            For k = i to j-1:
+
+                cost = m[i][k] + m[k+1][j]
+                     + p[i-1] × p[k] × p[j]
+
+                If cost is smaller than the current minimum:
+                    Store cost in m[i][j].
+                    Store k in s[i][j].
+
+Step 6: The minimum number of scalar multiplications is m[1][n].
+
+Step 7: Use s[i][j] to print the optimal matrix ordering.
+
+Step 8: Stop
