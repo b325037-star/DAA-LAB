@@ -1,0 +1,49 @@
+
+ALGORITHM 
+
+Step 1: Start.
+Step 2: Read the number of eggs E and floors F.
+Step 3: Create a DP table DP[E+1][F+1].
+Step 4: Initialize:
+        DP[e][0] = 0
+        DP[e][1] = 1
+        DP[1][f] = f
+
+Step 5: For e = 2 to E, repeat:
+
+        For f = 2 to F, repeat:
+
+            Set DP[e][f] = F.
+
+            For k = 1 to f, repeat:
+
+                If egg breaks:
+                    A = DP[e-1][k-1]
+
+                If egg does not break:
+                    B = DP[e][f-k]
+
+                Find the worst case:
+                    W = maximum(A, B)
+
+                Calculate:
+                    drops = W + 1
+
+                If drops < DP[e][f]:
+                    DP[e][f] = drops
+
+Step 6: Display DP[E][F].
+Step 7: Stop.
+
+
+
+TIME COMPLEXITY:
+
+There are E eggs and F floors.
+The DP table has E × F states.
+For each state, we check all possible floors from 1 to F.
+
+Therefore,
+Time Complexity = O(E × F × F)
+
+                 = O(EF²)
