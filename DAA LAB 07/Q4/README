@@ -1,19 +1,38 @@
-ALGORITHM REVE(n)
+ALGORITHM SECURITY_SWITCHES(n)
 
-1. If n = 0, return 0.
+1. Represent every switch configuration as a binary number.
 
-2. If n = 1:
-       return 1.
+2. Start state = 111...111
+   Goal state  = 000...000
 
-3. Set minimum = ∞.
+3. Create a queue and insert the start state.
 
-4. For k = 1 to n-1:
-       moves = 2 × REVE(k) + (2^(n-k) - 1)
+4. Mark the start state as visited.
 
-       If moves < minimum:
-           minimum = moves
-           best_k = k
+5. While the queue is not empty:
 
-5. Store best_k.
+       a. Remove a state from the queue.
 
-6. Return minimum.
+       b. If the state is 000...000:
+              Stop.
+
+       c. For every switch i:
+
+              i. Check whether switch i can be toggled
+                 according to the given rules.
+
+             ii. If it can be toggled:
+                    Create the new state.
+
+            iii. If the new state is not visited:
+                    Mark it visited.
+                    Store its parent.
+                    Store the toggled switch.
+                    Insert it into the queue.
+
+6. When the goal state is reached,
+   trace the parent states backwards.
+
+7. Print the switches toggled.
+
+8. The sequence obtained by BFS is the minimum-move solution.
